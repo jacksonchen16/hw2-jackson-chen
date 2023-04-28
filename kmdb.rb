@@ -89,7 +89,7 @@ new_studio1 = Studio.new
 new_studio1["name"] = "WarnerBros"
 new_studio1.save
 
-WarnerBros = studio.find.by({"name" => "WarnerBros"})
+WarnerBros = Studio.find.by({"name" => "WarnerBros"})
 
 new_movie1 = Movie.new
 
@@ -281,7 +281,20 @@ puts "======"
 puts ""
 
 # Query the movies data and loop through the results to display the movies output.
-# TODO!
+all_movies = Movie.all
+
+for movie in all_movies
+    title = movie["title"]
+    year_released = movie["year_released"]
+    rated = movie["rated"]
+    studio_id = Studio.find_by({"id" => movie["studio_id"]})
+    studio_name = studio_id ["name"]
+    
+    puts "#{title} #{year_released} #{rated} #{studio_name}"
+
+end
+
+
 
 # Prints a header for the cast output
 puts ""
@@ -290,4 +303,12 @@ puts "========"
 puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
-# TODO!
+
+for role in Role.all
+    movie = Movie.find_by({"id" => role["movie_id"]})
+    actor = Actor.find_by({"id" => role["actor_id"]})
+    
+    puts "#{movie["title"]} #{actor["name"]} #{role["character_name"]}"
+
+end
+
