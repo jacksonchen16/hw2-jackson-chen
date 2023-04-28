@@ -69,14 +69,211 @@
 
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
-# TODO!
+Movie.destroy_all
+Studio.destroy_all
+Actor.destroy_all
+Role.destroy_all
 
 # Generate models and tables, according to the domain model.
-# TODO!
+# In terminal:
+# rails generate model Movie
+# rails generate model Studio
+# rails generate model Actor
+# rails generate model Role
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
-# TODO!
+
+new_studio1 = Studio.new
+
+new_studio1["name"] = "WarnerBros"
+new_studio1.save
+
+WarnerBros = studio.find.by({"name" => "WarnerBros"})
+
+new_movie1 = Movie.new
+
+new_movie1["title"] = "Batman Begins"
+new_movie1["year_released"] = "2005"
+new_movie1["rated"] = "PG-13"
+new_movie1["studio_id"] = WarnerBros["id"]
+new_movie1.save
+
+new_movie2 = Movie.new
+
+new_movie2["title"] = "The Dark Knight"
+new_movie2["year_released"] = "2008"
+new_movie2["rated"] = "PG-13"
+new_movie2["studio_id"] = WarnerBros["id"]
+new_movie2.save
+
+new_movie3 = Movie.new
+
+new_movie3["title"] = "The Dark Knight Rises"
+new_movie3["year_released"] = "2012"
+new_movie3["rated"] = "PG-13"
+new_movie3["studio_id"] = WarnerBros["id"]
+new_movie3.save
+
+# for "Batman Begins"
+
+new_actor1 = Movie.new
+
+new_actor1["name"] = "Christian Bale"
+new_actor1.save
+
+new_actor2 = Movie.new
+
+new_actor2["name"] = "Michael Caine"
+new_actor2.save
+
+new_actor3 = Actor.new
+new_actor3 ["name"] = "Liam Neeson"
+new_actor3.save
+
+new_actor4 = Actor.new
+new_actor4 ["name"] = "Katie Holmes"
+new_actor4.save
+
+new_actor5 = Actor.new
+new_actor5 ["name"] = "Gary Oldman"
+new_actor5.save
+
+new_role1 = Role.new
+new_role1 ["character_name"] = "Bruce Wayne"
+new_role1 ["movie_id"] = new_movie1 ["id"]
+new_role1 ["actor_id"] = new_actor1 ["id"]
+new_role1.save
+
+new_role2 = Role.new
+new_role2 ["character_name"] = "Alfred"
+new_role2 ["movie_id"] = new_movie1 ["id"]
+new_role2 ["actor_id"] = new_actor2 ["id"]
+new_role2.save
+
+new_role3 = Role.new
+new_role3 ["character_name"] = "Ra's Al Ghul"
+new_role3 ["movie_id"] = new_movie1 ["id"]
+new_role3 ["actor_id"] = new_actor3 ["id"]
+new_role3.save
+
+new_role4 = Role.new
+new_role4 ["character_name"] = "Rachel Dawes"
+new_role4 ["movie_id"] = new_movie1 ["id"]
+new_role4 ["actor_id"] = new_actor4 ["id"]
+new_role4.save
+
+new_role5 = Role.new
+new_role5 ["character_name"] = "Commissioner Gordon"
+new_role5 ["movie_id"] = new_movie1 ["id"]
+new_role5 ["actor_id"] = new_actor5 ["id"]
+new_role5.save
+
+# for "The Dark Knight"
+
+new_actor6 = Actor.new
+new_actor6 ["name"] = "Christian Bale"
+new_actor6.save
+
+new_actor7 = Actor.new
+new_actor7 ["name"] = "Heath Ledger"
+new_actor7.save
+
+new_actor8 = Actor.new
+new_actor8 ["name"] = "Aaron Eckhart"
+new_actor8.save
+
+new_actor9 = Actor.new
+new_actor9 ["name"] = "Michael Caine"
+new_actor9.save
+
+new_actor10 = Actor.new
+new_actor10 ["name"] = "Maggie Gyllenhaal"
+new_actor10.save
+
+new_role6 = Role.new
+new_role6 ["character_name"] = "Bruce Wayne"
+new_role6 ["movie_id"] = new_movie2 ["id"]
+new_role6 ["actor_id"] = new_actor6 ["id"]
+new_role6.save
+
+
+new_role7 = Role.new
+new_role7 ["character_name"] = "Joker"
+new_role7 ["movie_id"] = new_movie2 ["id"]
+new_role7 ["actor_id"] = new_actor7 ["id"]
+new_role7.save
+
+new_role8 = Role.new
+new_role8 ["character_name"] = "Harvey Dent"
+new_role8 ["movie_id"] = new_movie2 ["id"]
+new_role8 ["actor_id"] = new_actor8 ["id"]
+new_role8.save
+
+new_role9 = Role.new
+new_role9 ["character_name"] = "Alfred"
+new_role9 ["movie_id"] = new_movie2 ["id"]
+new_role9 ["actor_id"] = new_actor9 ["id"]
+new_role9.save
+
+new_role10 = Role.new
+new_role10 ["character_name"] = "Rachel Dawes"
+new_role10 ["movie_id"] = new_movie2 ["id"]
+new_role10 ["actor_id"] = new_actor10 ["id"]
+new_role10.save
+
+# for "The Dark Knight Rises"
+
+new_actor11 = Actor.new
+new_actor11["name"] = "Christian Bale"
+new_actor11.save
+
+new_actor12 = Actor.new
+new_actor12 ["name"] = "Gary Oldman"
+new_actor12.save
+
+new_actor13 = Actor.new
+new_actor13 ["name"] = "Tom Hardy"
+new_actor13.save
+
+new_actor14 = Actor.new
+new_actor14 ["name"] = "Joseph Gordon-Levitt"
+new_actor14.save
+
+new_actor15 = Actor.new
+new_actor15 ["name"] = "Anne Hathaway"
+new_actor15.save
+
+new_role11 = Role.new
+new_role11 ["character_name"] = "Bruce Wayne"
+new_role11 ["movie_id"] = new_movie3 ["id"]
+new_role11 ["actor_id"] = new_actor11 ["id"]
+new_role11.save
+
+new_role12 = Role.new
+new_role12 ["character_name"] = "Commissioner Gordon"
+new_role12 ["movie_id"] = new_movie3 ["id"]
+new_role12 ["actor_id"] = new_actor12 ["id"]
+new_role12.save
+
+new_role13 = Role.new
+new_role13 ["character_name"] = "Bane"
+new_role13 ["movie_id"] = new_movie3 ["id"]
+new_role13 ["actor_id"] = new_actor13 ["id"]
+new_role13.save
+
+new_role14 = Role.new
+new_role14 ["character_name"] = "John Blake"
+new_role14 ["movie_id"] = new_movie3 ["id"]
+new_role14 ["actor_id"] = new_actor14 ["id"]
+new_role14.save
+
+new_role15 = Role.new
+new_role15 ["character_name"] = "Selina Kyle"
+new_role15 ["movie_id"] = new_movie3 ["id"]
+new_role15 ["actor_id"] = new_actor15 ["id"]
+new_role15.save
+
 
 # Prints a header for the movies output
 puts "Movies"
