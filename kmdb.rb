@@ -89,14 +89,13 @@ new_studio1 = Studio.new
 new_studio1["name"] = "WarnerBros"
 new_studio1.save
 
-WarnerBros = Studio.find.by({"name" => "WarnerBros"})
+warnerBros = Studio.find_by({"name" => "WarnerBros"})
 
 new_movie1 = Movie.new
-
 new_movie1["title"] = "Batman Begins"
 new_movie1["year_released"] = "2005"
 new_movie1["rated"] = "PG-13"
-new_movie1["studio_id"] = WarnerBros["id"]
+new_movie1["studio_id"] = warnerBros["id"]
 new_movie1.save
 
 new_movie2 = Movie.new
@@ -104,7 +103,7 @@ new_movie2 = Movie.new
 new_movie2["title"] = "The Dark Knight"
 new_movie2["year_released"] = "2008"
 new_movie2["rated"] = "PG-13"
-new_movie2["studio_id"] = WarnerBros["id"]
+new_movie2["studio_id"] = warnerBros["id"]
 new_movie2.save
 
 new_movie3 = Movie.new
@@ -112,17 +111,17 @@ new_movie3 = Movie.new
 new_movie3["title"] = "The Dark Knight Rises"
 new_movie3["year_released"] = "2012"
 new_movie3["rated"] = "PG-13"
-new_movie3["studio_id"] = WarnerBros["id"]
+new_movie3["studio_id"] = warnerBros["id"]
 new_movie3.save
 
 # for "Batman Begins"
 
-new_actor1 = Movie.new
+new_actor1 = Actor.new
 
 new_actor1["name"] = "Christian Bale"
 new_actor1.save
 
-new_actor2 = Movie.new
+new_actor2 = Actor.new
 
 new_actor2["name"] = "Michael Caine"
 new_actor2.save
